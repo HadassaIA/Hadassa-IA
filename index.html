@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HADASSA PRÓ - Automação 100% Fimathe para MT5</title>
-    <meta name="description" content="O robô que opera a estratégia Fimathe por você no MetaTrader 5. Traçado automático de Canal de Referência e Zona Neutra, execução sem emoção e monitoramento 24/5.">
+    <title>HADASSA IA PRÓ - Scalper Fimathe de Topos e Fundos para MT5 e Mesas Proprietárias</title>
+    <meta name="description" content="Opere diferente da manada que só pega abertura. O Scalper Inteligente que marca a Fimathe em pontos estratégicos de Topo e Fundo, sem horário fixo e com blindagem completa para Mesas Proprietárias no MT5.">
     
     <!-- Open Graph / WhatsApp / Instagram Preview -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Opere FIMATHE fora da manada que só pega abertura">
-    <meta property="og:description" content="Durma enquanto a Hadassa IA traça canais, aguarda o rompimento da madrugada e executa alvos com precisão matemática.">
-    <meta property="og:image" content="https://hadassaia.github.io/Hadassa-IA/1000096943.png">
+    <meta property="og:title" content="HADASSA IA PRÓ — Opere diferente da manada que só pega abertura">
+    <meta property="og:description" content="Scalper Inteligente para MT5 e Mesas Proprietárias. Marcação automática da Fimathe em Topos e Fundos estratégicos, sem horário fixo e com Blindagem Anti-Notícias.">
+    <meta property="og:image" content="109047.jpg">
     <meta name="theme-color" content="#0A84FF">
-    <link rel="icon" type="image/png" href="1000096943.png">
+    <link rel="icon" type="image/jpeg" href="109047.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +33,7 @@
                     colors: {
                         blue: { 500: '#0A84FF', 600: '#0070E0' },
                         emerald: { 500: '#00C853', 600: '#00A344' },
+                        amber: { 400: '#FBBF24', 500: '#F59E0B' }
                     }
                 }
             }
@@ -49,6 +50,7 @@
         .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.21, 0.47, 0.32, 0.98); }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
         .text-gradient { background: linear-gradient(to right, #0A84FF, #00C853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-gradient-gold { background: linear-gradient(to right, #FDE68A, #F59E0B, #EF4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .bg-gradient-main { background: linear-gradient(135deg, #0A84FF, #00C853); }
         .glass { background: rgba(15, 15, 20, 0.65); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(16px); }
         
@@ -68,6 +70,7 @@
         }
 
         .video-glow { box-shadow: 0 0 70px rgba(10, 132, 255, 0.18), inset 0 0 20px rgba(255,255,255,0.05); }
+        .logo-ring { box-shadow: 0 0 55px rgba(245, 158, 11, 0.25), 0 0 30px rgba(10, 132, 255, 0.25); }
         
         .chart-grid {
             background-size: 28px 28px;
@@ -79,17 +82,28 @@
 </head>
 <body class="selection:bg-blue-500/30 overflow-x-hidden">
 
+    <!-- TOP BAR DE IMPACTO -->
+    <div class="w-full bg-gradient-to-r from-amber-500/15 via-blue-500/15 to-emerald-500/15 border-b border-white/10 py-2 px-4 text-center relative z-50">
+        <p class="text-[11px] sm:text-xs font-bold tracking-wider uppercase text-zinc-200 flex items-center justify-center gap-2 flex-wrap">
+            <span class="px-2 py-0.5 rounded bg-amber-500 text-black font-black text-[10px]">NOVA VERSÃO 3.7</span>
+            <span>🔥 Opere diferente da manada que só pega abertura • Scalper de Topos e Fundos Aprovado em Mesas Proprietárias</span>
+        </p>
+    </div>
+
     <!-- NAVBAR -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-5">
+    <nav id="navbar" class="fixed top-8 w-full z-50 transition-all duration-300 py-4">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 text-white group">
-                <img src="1000096943.png" alt="Ícone Hadassa IA" class="w-10 h-10 rounded-xl object-cover border border-white/15 shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
-                <span class="font-display font-black text-lg sm:text-xl tracking-tighter uppercase">HADASSA <span class="text-blue-500">IA</span></span>
+                <img src="109047.jpg" onerror="this.onerror=null;this.src='109047_2.jpg';" alt="Logo Hadassa IA Pró" class="w-11 h-11 rounded-full object-cover border-2 border-amber-400/50 shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                <div class="flex flex-col">
+                    <span class="font-display font-black text-base sm:text-xl tracking-tighter uppercase leading-none">HADASSA <span class="text-amber-400">IA</span> <span class="text-red-500">PRÓ</span></span>
+                    <span class="text-[10px] font-mono text-zinc-400 tracking-widest uppercase">Intelligent Scalper</span>
+                </div>
             </a>
             
             <div class="hidden lg:flex items-center gap-8 text-sm font-medium text-zinc-400">
-                <a href="#features" class="hover:text-white transition-colors">O Problema</a>
-                <a href="#methodology" class="hover:text-white transition-colors">Como Funciona</a>
+                <a href="#features" class="hover:text-white transition-colors">Por Que Diferente?</a>
+                <a href="#methodology" class="hover:text-white transition-colors">Tecnologia v3.7</a>
                 <a href="#bonus" class="hover:text-white transition-colors">Bônus</a>
                 <a href="#planos" class="hover:text-white transition-colors">Planos</a>
                 <a href="#faq" class="hover:text-white transition-colors">Dúvidas</a>
@@ -108,7 +122,7 @@
     </nav>
 
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
-    <a href="https://wa.me/5522988102360?text=Ol%C3%A1%2C%20eu%20Gostaria%20de%20mais%20Informa%C3%A7%C3%B5es%20sobre%20a%20Hadassa%20IA" target="_blank" rel="noopener noreferrer" aria-label="Falar com Suporte no WhatsApp" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-3.5 md:px-6 md:py-4 rounded-full bg-[#25D366] text-white font-bold shadow-2xl shadow-green-500/30 hover:scale-110 transition-transform border border-white/20">
+    <a href="https://wa.me/5522988102360?text=Ol%C3%A1%2C%20eu%20Gostaria%20de%20mais%20Informa%C3%A7%C3%B5es%20sobre%20a%20Hadassa%20IA%20Pr%C3%B3" target="_blank" rel="noopener noreferrer" aria-label="Falar com Suporte no WhatsApp" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-3.5 md:px-6 md:py-4 rounded-full bg-[#25D366] text-white font-bold shadow-2xl shadow-green-500/30 hover:scale-110 transition-transform border border-white/20">
         <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.031 0C5.393 0 0 5.394 0 12.034c0 2.12.551 4.184 1.597 6.002L.031 24l6.105-1.602A11.954 11.954 0 0012.031 24c6.638 0 12.033-5.394 12.033-12.034C24.064 5.394 18.669 0 12.031 0zm0 22.012c-1.782 0-3.525-.48-5.05-1.385l-.362-.214-3.754.985.998-3.66-.235-.374a9.98 9.98 0 01-1.528-5.33A10.021 10.021 0 0112.031 1.99c5.526 0 10.032 4.506 10.032 10.031A10.022 10.022 0 0112.031 22.012zm5.503-7.518c-.302-.15-1.784-.881-2.062-.982-.277-.101-.48-.15-.681.15-.202.302-.782.982-.958 1.183-.177.202-.353.227-.655.076-.302-.151-1.272-.469-2.423-1.496-.897-.801-1.503-1.79-1.68-2.092-.176-.302-.019-.465.132-.616.135-.135.302-.352.454-.528.151-.177.202-.302.302-.503.1-.202.05-.378-.025-.529-.076-.151-.681-1.642-.933-2.247-.245-.59-.494-.51-.681-.519-.176-.008-.378-.01-.58-.01-.201 0-.528.076-.805.378-.277.302-1.057 1.033-1.057 2.518 0 1.485 1.082 2.919 1.233 3.12.151.202 2.128 3.25 5.155 4.557.72.311 1.282.497 1.721.636.723.23 1.381.197 1.9.12.584-.087 1.784-.73 2.036-1.436.252-.706.252-1.31.177-1.436-.076-.126-.277-.202-.58-.353z"/>
         </svg>
@@ -118,37 +132,52 @@
     <!-- HERO SECTION -->
     <section class="relative min-h-screen flex flex-col justify-center pt-28 pb-20 overflow-hidden">
         <div class="absolute inset-0 z-0 pointer-events-none">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(10,132,255,0.18),transparent_55%)]"></div>
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(245,158,11,0.14),rgba(10,132,255,0.14),transparent_60%)]"></div>
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/80 to-[#050505]"></div>
         </div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-6 text-center mt-4">
             
+            <!-- NOVA LOGOMARCA OFICIAL HADASSA IA PRÓ -->
             <div class="fade-up flex justify-center mb-8">
-                <div class="relative w-44 h-44 md:w-60 md:h-60 group">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-[#0A84FF]/25 via-transparent to-emerald-500/20 rounded-full blur-3xl group-hover:blur-2xl transition-all duration-700"></div>
-                    <img src="1000096943.png" alt="Logo Oficial Hadassa IA" class="relative z-10 w-full h-full object-contain rounded-3xl drop-shadow-2xl group-hover:scale-105 transition-transform duration-500">
+                <div class="relative w-48 h-48 md:w-64 md:h-64 group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-amber-500/30 via-blue-500/20 to-red-500/25 rounded-full blur-3xl group-hover:blur-2xl transition-all duration-700"></div>
+                    <img src="109047.jpg" onerror="this.onerror=null;this.src='109047_2.jpg';" alt="Logo Oficial Hadassa IA Pró" class="relative z-10 w-full h-full object-cover rounded-full border-2 border-amber-400/40 logo-ring group-hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
 
-            <div class="fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/25 text-blue-400 text-xs font-bold tracking-widest uppercase mb-6" style="transition-delay: 50ms;">
-                <i data-lucide="cpu" class="w-4 h-4"></i>
-                Expert Advisor Oficial para MetaTrader 5
+            <!-- APELO PRINCIPAL NO TOPO -->
+            <div class="fade-up inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-extrabold tracking-widest uppercase mb-6 shadow-lg shadow-amber-500/10" style="transition-delay: 50ms;">
+                <i data-lucide="flame" class="w-4 h-4 text-red-500"></i>
+                OPERE DIFERENTE DA MANADA QUE SÓ PEGA ABERTURA
             </div>
             
-            <h1 class="fade-up text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-black tracking-tighter leading-[1.08] mb-6 uppercase" style="transition-delay: 100ms;">
-                A Fimathe agora é <span class="text-gradient block sm:inline">100% Automática</span>
+            <h1 class="fade-up text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tighter leading-[1.1] mb-6 uppercase max-w-5xl mx-auto" style="transition-delay: 100ms;">
+                O Scalper que Marca a Fimathe nos <span class="text-gradient-gold block sm:inline">Topos e Fundos</span> Estratégicos
             </h1>
 
-            <p class="fade-up text-base sm:text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto mb-10 leading-relaxed" style="transition-delay: 200ms;">
-                Durma tranquilo enquanto a <strong class="text-white">HADASSA IA</strong> mapeia os canais, aguarda o rompimento da madrugada e executa os alvos com precisão matemática. Sem atraso, sem hesitação, sem horário fixo.
+            <p class="fade-up text-base sm:text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto mb-10 leading-relaxed" style="transition-delay: 200ms;">
+                Esqueça os robôs de horário fixo que entram onde os bancos caçam os stops do varejo. O <strong class="text-white">HADASSA IA PRÓ v3.7</strong> rastreia ondas institucionais em tempo real, marca e fatia o canal nos extremos exatos de reversão e opera com <strong class="text-emerald-400">Blindagem Completa para Mesas Proprietárias</strong>.
             </p>
+
+            <!-- DESTAQUES RÁPIDOS EM PÍLULAS -->
+            <div class="fade-up flex flex-wrap justify-center gap-3 max-w-3xl mx-auto mb-10" style="transition-delay: 250ms;">
+                <span class="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-zinc-200 flex items-center gap-1.5">
+                    <i data-lucide="crosshair" class="w-3.5 h-3.5 text-amber-400"></i> Sem Horário Fixo (Caça Topos e Fundos)
+                </span>
+                <span class="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-zinc-200 flex items-center gap-1.5">
+                    <i data-lucide="building-2" class="w-3.5 h-3.5 text-emerald-400"></i> Ideal p/ Mesas Proprietárias (+85% Trades &gt; 4 min)
+                </span>
+                <span class="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-zinc-200 flex items-center gap-1.5">
+                    <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-blue-400"></i> Blindagem Anti-Notícias e Anti-Spread
+                </span>
+            </div>
 
             <!-- REEL EMBED -->
             <div class="fade-up w-full max-w-sm md:max-w-md mx-auto mb-12 border border-white/15 rounded-3xl overflow-hidden relative video-glow flex items-center justify-center bg-zinc-950" style="transition-delay: 300ms; min-height: 580px;">
                 <iframe 
                     src="https://www.instagram.com/reel/DeaMVn0xTlQ/embed/" 
-                    title="Demonstração Hadassa IA"
+                    title="Demonstração Hadassa IA Pró"
                     width="100%" 
                     height="100%" 
                     frameborder="0" 
@@ -161,58 +190,58 @@
 
             <div class="fade-up flex flex-col items-center justify-center gap-4" style="transition-delay: 400ms;">
                 <a href="#planos" class="group relative px-8 sm:px-10 py-5 rounded-full bg-gradient-main text-white font-black text-base sm:text-lg shadow-2xl shadow-blue-500/25 hover:scale-105 transition-all flex items-center gap-3 pulse-cta">
-                    QUERO AUTOMATIZAR MEU TRADING
+                    QUERO OPERAR FORA DA MANADA
                     <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
                 </a>
                 <span class="text-xs text-zinc-500 flex items-center gap-1.5">
-                    <i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-500"></i> Liberação imediata após a confirmação
+                    <i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-500"></i> Liberação imediata + 5 Perfis de Estratégia inclusos
                 </span>
             </div>
 
             <!-- BADGES DE CONFIANÇA -->
             <div class="fade-up mt-12 pt-8 border-t border-white/5 flex flex-wrap items-center justify-center gap-6 md:gap-12 text-xs font-bold text-zinc-400 uppercase tracking-widest" style="transition-delay: 500ms;">
                 <div class="flex items-center gap-2"><i data-lucide="shield-check" class="w-5 h-5 text-emerald-500"></i> Garantia de 7 Dias</div>
-                <div class="flex items-center gap-2"><i data-lucide="sliders" class="w-5 h-5 text-blue-500"></i> Break Even & Trailing Stop</div>
+                <div class="flex items-center gap-2"><i data-lucide="trending-up" class="w-5 h-5 text-amber-400"></i> Take Inteligente Dinâmico</div>
                 <div class="flex items-center gap-2"><i data-lucide="infinity" class="w-5 h-5 text-emerald-500"></i> Sem Limite de Contas</div>
-                <div class="flex items-center gap-2"><i data-lucide="award" class="w-5 h-5 text-blue-500"></i> Compatível com Mesas Prop</div>
+                <div class="flex items-center gap-2"><i data-lucide="award" class="w-5 h-5 text-blue-500"></i> Aprovador de Mesas Prop</div>
             </div>
         </div>
     </section>
 
-    <!-- SEÇÃO: O PROBLEMA -->
+    <!-- SEÇÃO: POR QUE OPERAR DIFERENTE DA MANADA -->
     <section id="features" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="fade-up">
-                    <span class="text-red-400 text-xs font-bold tracking-[0.25em] uppercase mb-3 block">Execução Humana vs. Automação</span>
-                    <h2 class="text-3xl md:text-5xl font-display font-black mb-6 uppercase tracking-tighter">Por que você perde dinheiro operando Fimathe na mão?</h2>
-                    <p class="text-zinc-400 max-w-2xl mx-auto">A técnica funciona. O que falha é o cansaço e o emocional humano. A Hadassa IA elimina de vez essas 3 fraquezas:</p>
+                    <span class="text-amber-400 text-xs font-bold tracking-[0.25em] uppercase mb-3 block">Inteligência Institucional vs. Varejo</span>
+                    <h2 class="text-3xl md:text-5xl font-display font-black mb-6 uppercase tracking-tighter">Por que a manada perde dinheiro na abertura?</h2>
+                    <p class="text-zinc-400 max-w-2xl mx-auto">95% dos traders marcam canais exatamente no mesmo minuto de abertura. Os grandes players sabem disso, varrem os stops da manada e seguem sem você. Veja como o <strong class="text-white">Hadassa IA Pró</strong> vira esse jogo:</p>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="fade-up glass p-8 rounded-[32px] border-t-2 border-t-red-500/30 group hover:border-blue-500/50 transition-all duration-500">
-                    <div class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="moon" class="w-7 h-7 text-red-400"></i>
+                <div class="fade-up glass p-8 rounded-[32px] border-t-2 border-t-amber-500/40 group hover:border-amber-400/60 transition-all duration-500">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="compass" class="w-7 h-7 text-amber-400"></i>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-4">A Dor da Madrugada</h3>
-                    <p class="text-zinc-400 leading-relaxed text-sm">Os melhores rompimentos da abertura de Londres acontecem de madrugada. Você acorda cansado, entra atrasado ou perde o movimento. A IA monitora o gráfico 24/5 sem piscar.</p>
+                    <h3 class="text-xl font-display font-bold text-white mb-4">Sem Horário Fixo: Fimathe nos Topos e Fundos</h3>
+                    <p class="text-zinc-400 leading-relaxed text-sm">Em vez de traçar caixas cegas em horário fixo, o algoritmo rastreia quando o ativo estica, identifica a exaustão no <strong class="text-white">Topo ou Fundo estratégico</strong> e monta o canal CA + C1 exatamente no pullback institucional.</p>
                 </div>
 
-                <div class="fade-up glass p-8 rounded-[32px] border-t-2 border-t-red-500/30 group hover:border-blue-500/50 transition-all duration-500" style="transition-delay: 100ms;">
-                    <div class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="brain-circuit" class="w-7 h-7 text-red-400"></i>
+                <div class="fade-up glass p-8 rounded-[32px] border-t-2 border-t-emerald-500/40 group hover:border-emerald-400/60 transition-all duration-500" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-emerald-400"></i>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-4">Hesitação Emocional</h3>
-                    <p class="text-zinc-400 leading-relaxed text-sm">O canal rompeu, a vela fechou fora, mas você trava com medo de clicar ou move o Stop antes da hora. A Hadassa IA é fria: validou o parâmetro matemático, a ordem entra em milissegundos.</p>
+                    <h3 class="text-xl font-display font-bold text-white mb-4">Blindado para Mesas Proprietárias</h3>
+                    <p class="text-zinc-400 leading-relaxed text-sm">Projetado para aprovar e manter contas financiadas: gerencia risco percentual exato (ex: 0,5% por trade), para automaticamente na meta de Takes ou limite de Stops do dia e mantém <strong class="text-white">+85% das ordens acima de 4 minutos</strong>.</p>
                 </div>
 
-                <div class="fade-up glass p-8 rounded-[32px] border-t-2 border-t-red-500/30 group hover:border-blue-500/50 transition-all duration-500" style="transition-delay: 200ms;">
-                    <div class="w-14 h-14 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i data-lucide="ruler" class="w-7 h-7 text-red-400"></i>
+                <div class="fade-up glass p-8 rounded-[32px] border-t-2 border-t-blue-500/40 group hover:border-blue-400/60 transition-all duration-500" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="radar" class="w-7 h-7 text-blue-400"></i>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-4">Traçados Imprecisos</h3>
-                    <p class="text-zinc-400 leading-relaxed text-sm">Traçar canais manualmente no MT5 gera diferenças que custam caro em falsos rompimentos. A IA calcula topos, fundos e projeções exatas em pontos, seguindo a regra original.</p>
+                    <h3 class="text-xl font-display font-bold text-white mb-4">Proteção Anti-Notícias e Anti-Spread</h3>
+                    <p class="text-zinc-400 leading-relaxed text-sm">Em notícias de alto impacto (Payroll, CPI, FED), o stop comum pode derrapar. A Hadassa IA Pró lê o calendário do MT5, <strong class="text-white">fecha ordens abertas minutos antes da notícia</strong>, congela entradas e bloqueia spreads altos.</p>
                 </div>
             </div>
         </div>
@@ -223,9 +252,9 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="fade-up">
-                    <span class="text-emerald-400 text-xs font-bold tracking-[0.25em] uppercase mb-3 block">Engenharia de Precisão</span>
-                    <h2 class="text-3xl md:text-5xl font-display font-black mb-6 uppercase tracking-tighter">O Setup Completo, Automatizado</h2>
-                    <p class="text-zinc-400 max-w-2xl mx-auto">O robô não reinventa a roda: ele executa o operacional Fimathe clássico com disciplina cirúrgica.</p>
+                    <span class="text-emerald-400 text-xs font-bold tracking-[0.25em] uppercase mb-3 block">Engenharia da Versão 3.7</span>
+                    <h2 class="text-3xl md:text-5xl font-display font-black mb-6 uppercase tracking-tighter">Tecnologia Scalper de Alta Precisão</h2>
+                    <p class="text-zinc-400 max-w-2xl mx-auto">Conheça a máquina de estados que transforma a leitura de Topos e Fundos da Fimathe em execução 100% automatizada.</p>
                 </div>
             </div>
             
@@ -233,108 +262,111 @@
                 <!-- Passos -->
                 <div class="fade-up lg:col-span-6 space-y-6">
                     <div class="flex gap-4 p-4 rounded-2xl hover:bg-white/[0.03] border border-transparent hover:border-white/5 transition-all">
-                        <div class="w-12 h-12 shrink-0 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500 font-display font-bold border border-blue-500/20">01</div>
+                        <div class="w-12 h-12 shrink-0 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-400 font-display font-bold border border-amber-500/20">01</div>
                         <div>
-                            <h4 class="text-white font-bold text-lg mb-1">Mapeamento de Canal de Referência e Zona Neutra</h4>
-                            <p class="text-zinc-400 text-sm leading-relaxed">A IA identifica a estrutura do preço no horário programado, mede o Canal de Referência e projeta a Zona Neutra automaticamente no gráfico.</p>
+                            <h4 class="text-white font-bold text-lg mb-1">Rastreio de Pernada e Fatiamento Inteligente</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed">O robô aguarda uma pernada real de tendência e mapeia a retração no Topo ou Fundo. Se o canal for amplo, ele <strong class="text-white">fatia a estrutura CA + C1 ao meio automaticamente</strong> para garantir alvos rápidos e stops curtos.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 p-4 rounded-2xl hover:bg-white/[0.03] border border-transparent hover:border-white/5 transition-all">
                         <div class="w-12 h-12 shrink-0 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500 font-display font-bold border border-blue-500/20">02</div>
                         <div>
-                            <h4 class="text-white font-bold text-lg mb-1">Entrada no Fechamento do Rompimento</h4>
-                            <p class="text-zinc-400 text-sm leading-relaxed">Filtro rigoroso: a ordem só é disparada após o candle fechar confirmado fora do canal, protegendo sua banca contra violinadas de pavio.</p>
+                            <h4 class="text-white font-bold text-lg mb-1">5 Perfis de Estratégia + Filtro de Exaustão (TooDeep)</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed">Escolha com 1 clique entre 5 perfis calibrados (<strong class="text-white">Clássica, Conservadora, Agressiva, Moderada ou Blindada</strong>). Se a vela de rompimento esticar demais, o filtro TooDeep evita entrar no topo e aguarda o retorno.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 p-4 rounded-2xl hover:bg-white/[0.03] border border-transparent hover:border-white/5 transition-all">
-                        <div class="w-12 h-12 shrink-0 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500 font-display font-bold border border-blue-500/20">03</div>
+                        <div class="w-12 h-12 shrink-0 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500 font-display font-bold border border-emerald-500/20">03</div>
                         <div>
-                            <h4 class="text-white font-bold text-lg mb-1">Gestão de Alvos (Take Profit em Níveis)</h4>
-                            <p class="text-zinc-400 text-sm leading-relaxed">Configure saídas parciais ou finais nos subciclos de expansão de 100% e 200% da caixa Fimathe com cálculo automático de lote.</p>
+                            <h4 class="text-white font-bold text-lg mb-1">Take Inteligente com Expansão de Alvos</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed">Quando o trade atinge 70% do caminho com fluxo forte, o <strong class="text-white">Take Inteligente</strong> expande o alvo automaticamente para o próximo nível da Fimathe e trava o Stop Loss no lucro.</p>
                         </div>
                     </div>
                     <div class="flex gap-4 p-4 rounded-2xl hover:bg-white/[0.03] border border-transparent hover:border-white/5 transition-all">
-                        <div class="w-12 h-12 shrink-0 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-500 font-display font-bold border border-emerald-500/20">04</div>
+                        <div class="w-12 h-12 shrink-0 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 font-display font-bold border border-purple-500/20">04</div>
                         <div>
-                            <h4 class="text-white font-bold text-lg mb-1">Break Even & Trailing Stop Automático</h4>
-                            <p class="text-zinc-400 text-sm leading-relaxed">O preço avançou 1 canal a seu favor? A Hadassa IA move seu Stop Loss para o zero a zero instantaneamente e protege o lucro a cada novo nível.</p>
+                            <h4 class="text-white font-bold text-lg mb-1">Painel Executivo Interativo (Dia / Semana / Mês)</h4>
+                            <p class="text-zinc-400 text-sm leading-relaxed">Acompanhe diretamente no gráfico os Takes, Stops, Assertividade, Fator de Lucro e o desempenho separado por ativo em tempo real com filtros clicáveis.</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Simulador Visual MT5 Fimathe -->
+                <!-- Simulador Visual MT5 Fimathe v3.7 -->
                 <div class="fade-up lg:col-span-6">
                     <div class="glass rounded-3xl border border-white/15 overflow-hidden shadow-2xl">
                         <!-- Barra de Topo Estilo MT5 -->
-                        <div class="bg-zinc-900/90 px-5 py-3.5 border-b border-white/10 flex items-center justify-between">
+                        <div class="bg-zinc-900/90 px-5 py-3.5 border-b border-white/10 flex items-center justify-between flex-wrap gap-2">
                             <div class="flex items-center gap-2">
                                 <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
                                 <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
                                 <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                                <span class="ml-2 text-xs font-mono text-zinc-300 font-bold">XAUUSD, M15 — MetaTrader 5</span>
+                                <span class="ml-2 text-xs font-mono text-zinc-300 font-bold">XAUUSD, M1 — Scalper Topo/Fundo</span>
                             </div>
-                            <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30">
-                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                                <span class="text-[11px] font-mono font-bold text-emerald-400">HADASSA IA v1.6 ATIVA</span>
+                            <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                <span class="text-[11px] font-mono font-bold text-amber-400">HADASSA IA PRÓ v3.7</span>
                             </div>
                         </div>
 
                         <!-- Gráfico SVG Fimathe -->
                         <div class="p-6 chart-grid relative bg-[#07090e]">
                             <svg viewBox="0 0 500 310" class="w-full h-auto overflow-visible">
-                                <!-- Linhas de Projeção Fimathe -->
-                                <!-- Take Profit 200% -->
+                                <!-- Take Profit Expandido (Take Inteligente) -->
                                 <line x1="0" y1="30" x2="500" y2="30" stroke="#00C853" stroke-width="1.5" stroke-dasharray="6,4" />
-                                <rect x="370" y="16" width="125" height="20" rx="4" fill="#00C853" fill-opacity="0.18" stroke="#00C853" stroke-width="1"/>
-                                <text x="432" y="29" fill="#4ade80" font-size="10" font-family="monospace" font-weight="bold" text-anchor="middle">TAKE PROFIT (200%)</text>
+                                <rect x="340" y="16" width="155" height="20" rx="4" fill="#00C853" fill-opacity="0.18" stroke="#00C853" stroke-width="1"/>
+                                <text x="417" y="29" fill="#4ade80" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">TAKE 02 (TAKE INTELIGENTE)</text>
 
-                                <!-- Take Profit 100% / Break Even Trigger -->
+                                <!-- Take 01 / Trava de Estrutura -->
                                 <line x1="0" y1="90" x2="500" y2="90" stroke="#0A84FF" stroke-width="1.5" stroke-dasharray="4,4" />
-                                <rect x="370" y="76" width="125" height="20" rx="4" fill="#0A84FF" fill-opacity="0.18" stroke="#0A84FF" stroke-width="1"/>
-                                <text x="432" y="89" fill="#60a5fa" font-size="10" font-family="monospace" font-weight="bold" text-anchor="middle">SUBCICLO 100% (BE)</text>
+                                <rect x="340" y="76" width="155" height="20" rx="4" fill="#0A84FF" fill-opacity="0.18" stroke="#0A84FF" stroke-width="1"/>
+                                <text x="417" y="89" fill="#60a5fa" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">TAKE 01 (TRAVA SL LUCRO)</text>
 
-                                <!-- Canal de Referência (Caixa Azul) -->
-                                <rect x="20" y="150" width="475" height="60" fill="#0A84FF" fill-opacity="0.08" />
+                                <!-- C1 Fatiado (Caixa Azul Superior) -->
+                                <rect x="20" y="150" width="475" height="55" fill="#0A84FF" fill-opacity="0.09" />
                                 <line x1="0" y1="150" x2="500" y2="150" stroke="#0A84FF" stroke-width="2" />
-                                <line x1="0" y1="210" x2="500" y2="210" stroke="#0A84FF" stroke-width="2" />
-                                <text x="30" y="168" fill="#60a5fa" font-size="10" font-family="monospace" font-weight="bold">CANAL DE REFERÊNCIA (CR)</text>
+                                <line x1="0" y1="205" x2="500" y2="205" stroke="#0A84FF" stroke-width="1.5" stroke-dasharray="4,3" />
+                                <text x="30" y="166" fill="#60a5fa" font-size="9.5" font-family="monospace" font-weight="bold">C1 (FATIAMENTO INTELIGENTE)</text>
 
-                                <!-- Zona Neutra (Caixa Abaixo) -->
-                                <rect x="20" y="210" width="475" height="60" fill="#f59e0b" fill-opacity="0.05" />
-                                <line x1="0" y1="270" x2="500" y2="270" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,5" />
-                                <text x="30" y="262" fill="#fbbf24" font-size="10" font-family="monospace" font-weight="bold">ZONA NEUTRA (ZN) / STOP</text>
+                                <!-- CA Fundo Estratégico (Caixa Inferior) -->
+                                <rect x="20" y="205" width="475" height="55" fill="#f59e0b" fill-opacity="0.07" />
+                                <line x1="0" y1="260" x2="500" y2="260" stroke="#f59e0b" stroke-width="2" />
+                                <text x="30" y="252" fill="#fbbf24" font-size="9.5" font-family="monospace" font-weight="bold">CA (FUNDO ESTRATÉGICO RASTREADO)</text>
 
-                                <!-- Candles Simulados -->
+                                <!-- Stop Fora Curto -->
+                                <line x1="0" y1="276" x2="500" y2="276" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3,3" />
+                                <text x="30" y="290" fill="#f87171" font-size="9" font-family="monospace" font-weight="bold">STOP LOSS CURTO (PROTEÇÃO 0,5%)</text>
+
+                                <!-- Candles Simulados (Pernada de Queda + Pullback no Fundo + Rompimento) -->
                                 <!-- Candle 1 -->
-                                <line x1="60" y1="190" x2="60" y2="245" stroke="#ef4444" stroke-width="1.5"/>
-                                <rect x="54" y="200" width="12" height="35" rx="1" fill="#ef4444"/>
-                                <!-- Candle 2 -->
-                                <line x1="95" y1="175" x2="95" y2="230" stroke="#10b981" stroke-width="1.5"/>
-                                <rect x="89" y="185" width="12" height="35" rx="1" fill="#10b981"/>
+                                <line x1="55" y1="165" x2="55" y2="225" stroke="#ef4444" stroke-width="1.5"/>
+                                <rect x="49" y="175" width="12" height="42" rx="1" fill="#ef4444"/>
+                                <!-- Candle 2 (Fundo Extremo) -->
+                                <line x1="90" y1="205" x2="90" y2="260" stroke="#ef4444" stroke-width="1.5"/>
+                                <rect x="84" y="212" width="12" height="42" rx="1" fill="#ef4444"/>
                                 <!-- Candle 3 -->
-                                <line x1="130" y1="155" x2="130" y2="205" stroke="#10b981" stroke-width="1.5"/>
-                                <rect x="124" y="162" width="12" height="28" rx="1" fill="#10b981"/>
+                                <line x1="125" y1="195" x2="125" y2="248" stroke="#10b981" stroke-width="1.5"/>
+                                <rect x="119" y="205" width="12" height="35" rx="1" fill="#10b981"/>
                                 <!-- Candle 4 -->
-                                <line x1="165" y1="160" x2="165" y2="215" stroke="#ef4444" stroke-width="1.5"/>
-                                <rect x="159" y="165" width="12" height="35" rx="1" fill="#ef4444"/>
-                                <!-- Candle 5 -->
-                                <line x1="200" y1="152" x2="200" y2="205" stroke="#10b981" stroke-width="1.5"/>
-                                <rect x="194" y="160" width="12" height="38" rx="1" fill="#10b981"/>
-                                <!-- Candle 6 (Rompimento Confirmado Fora do Canal) -->
-                                <line x1="240" y1="115" x2="240" y2="170" stroke="#00C853" stroke-width="2"/>
-                                <rect x="233" y="122" width="14" height="40" rx="1.5" fill="#00C853"/>
+                                <line x1="160" y1="180" x2="160" y2="230" stroke="#ef4444" stroke-width="1.5"/>
+                                <rect x="154" y="190" width="12" height="30" rx="1" fill="#ef4444"/>
+                                <!-- Candle 5 (Armou C1 no Fundo) -->
+                                <line x1="195" y1="152" x2="195" y2="210" stroke="#10b981" stroke-width="1.5"/>
+                                <rect x="189" y="160" width="12" height="42" rx="1" fill="#10b981"/>
+                                <!-- Candle 6 (Rompimento Confirmado Fora da Caixa) -->
+                                <line x1="238" y1="115" x2="238" y2="168" stroke="#00C853" stroke-width="2"/>
+                                <rect x="231" y="122" width="14" height="38" rx="1.5" fill="#00C853"/>
                                 <!-- Gatilho Buy Badge -->
-                                <circle cx="240" cy="122" r="5" fill="#ffffff" stroke="#00C853" stroke-width="3"/>
-                                <rect x="175" y="96" width="130" height="20" rx="4" fill="#00C853" />
-                                <text x="240" y="109" fill="#050505" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">COMPRA EXECUTADA</text>
+                                <circle cx="238" cy="122" r="5" fill="#ffffff" stroke="#00C853" stroke-width="3"/>
+                                <rect x="168" y="96" width="140" height="20" rx="4" fill="#00C853" />
+                                <text x="238" y="109" fill="#050505" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">COMPRA NO ROMPIMENTO</text>
 
                                 <!-- Candle 7 -->
                                 <line x1="280" y1="82" x2="280" y2="132" stroke="#00C853" stroke-width="2"/>
                                 <rect x="274" y="90" width="12" height="34" rx="1" fill="#00C853"/>
                                 <!-- Candle 8 -->
-                                <line x1="315" y1="60" x2="315" y2="105" stroke="#00C853" stroke-width="2"/>
+                                <line x1="315" y1="58" x2="315" y2="105" stroke="#00C853" stroke-width="2"/>
                                 <rect x="309" y="65" width="12" height="28" rx="1" fill="#00C853"/>
-                                <!-- Candle 9 (Bateu no Take) -->
+                                <!-- Candle 9 (Bateu no Take Expandido) -->
                                 <line x1="350" y1="22" x2="350" y2="75" stroke="#00C853" stroke-width="2"/>
                                 <rect x="344" y="30" width="12" height="38" rx="1" fill="#00C853"/>
                             </svg>
@@ -342,16 +374,16 @@
                             <!-- Painel Inferior de Telemetria -->
                             <div class="mt-4 p-4 rounded-2xl bg-black/80 backdrop-blur-md border border-white/10 grid grid-cols-3 gap-4 text-center">
                                 <div>
-                                    <span class="text-[10px] font-bold text-zinc-500 uppercase block">Execução</span>
-                                    <span class="text-sm font-display font-bold text-white">0.02 seg</span>
+                                    <span class="text-[10px] font-bold text-zinc-500 uppercase block">Estratégia</span>
+                                    <span class="text-xs sm:text-sm font-display font-bold text-amber-400">5 Perfis (01 a 05)</span>
                                 </div>
                                 <div class="border-x border-white/10">
-                                    <span class="text-[10px] font-bold text-zinc-500 uppercase block">Stop Loss</span>
-                                    <span class="text-sm font-display font-bold text-blue-400">No Break Even</span>
+                                    <span class="text-[10px] font-bold text-zinc-500 uppercase block">Blindagem Prop</span>
+                                    <span class="text-xs sm:text-sm font-display font-bold text-blue-400">Notícia &amp; Spread ON</span>
                                 </div>
                                 <div>
-                                    <span class="text-[10px] font-bold text-zinc-500 uppercase block">Resultado</span>
-                                    <span class="text-sm font-display font-bold text-emerald-400">+200% Alvo</span>
+                                    <span class="text-[10px] font-bold text-zinc-500 uppercase block">Assertividade</span>
+                                    <span class="text-xs sm:text-sm font-display font-bold text-emerald-400">+73% WinRate</span>
                                 </div>
                             </div>
                         </div>
@@ -374,14 +406,14 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="fade-up bg-gradient-to-br from-[#121318] to-[#0a0a0c] border border-white/10 hover:border-emerald-500/40 transition-all p-8 rounded-3xl flex flex-col sm:flex-row gap-6">
                     <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 flex items-center justify-center shrink-0">
-                        <i data-lucide="bar-chart-3" class="w-7 h-7"></i>
+                        <i data-lucide="Sliders" class="w-7 h-7"></i>
                     </div>
                     <div>
                         <div class="inline-block mb-2 text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-0.5 rounded-full">
                             BÔNUS #1
                         </div>
-                        <h4 class="text-white font-display font-bold text-xl mb-2">Robô de Histórico</h4>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Ferramenta exclusiva que analisa o passado do ativo e revela exatamente o melhor horário com a maior porcentagem de acertos para você configurar suas entradas.</p>
+                        <h4 class="text-white font-display font-bold text-xl mb-2">Setups Oficiais Calibrados + Mapeador</h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Arquivos de configuração (.set) prontos e validados em 5 anos de backtest (2022–2026) para <strong class="text-white">Mesa Proprietária (0,5%)</strong> e <strong class="text-white">Capital Próprio</strong>, além do Robô Mapeador de Histórico.</p>
                         <span class="inline-block mt-4 text-xs font-bold bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-zinc-300">
                             Valor: <span class="line-through text-zinc-500">R$ 297</span> <span class="text-emerald-400 ml-1">GRÁTIS NO VITALÍCIO</span>
                         </span>
@@ -397,7 +429,7 @@
                             BÔNUS #2
                         </div>
                         <h4 class="text-white font-display font-bold text-xl mb-2">Treinamento Passo a Passo</h4>
-                        <p class="text-zinc-400 text-sm leading-relaxed">Aulas rápidas e diretas ao ponto ensinando como instalar no MT5 em 5 minutos, configurar na VPS (nuvem) e ajustar o gerenciamento de lotes para a sua banca.</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Aulas rápidas e diretas ao ponto ensinando como instalar no MT5 em 5 minutos, escolher entre os 5 Perfis de Estratégia, configurar na VPS e aprovar em Mesas Proprietárias.</p>
                         <span class="inline-block mt-4 text-xs font-bold bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg text-zinc-300">
                             Valor: <span class="line-through text-zinc-500">R$ 197</span> <span class="text-emerald-400 ml-1">GRÁTIS HOJE</span>
                         </span>
@@ -437,7 +469,7 @@
                             <i data-lucide="flame" class="w-4 h-4"></i> Benefício Oficial de Parceiro
                         </div>
                         <h3 class="text-2xl md:text-4xl font-display font-black text-white mb-3 uppercase tracking-tighter">
-                            Resgate <span class="text-red-500">50% OFF</span> na Hadassa IA
+                            Resgate <span class="text-red-500">50% OFF</span> no Hadassa IA Pró
                         </h3>
                         <p class="text-zinc-300 text-sm leading-relaxed mb-6">
                             Deseja operar com spreads baixos pela <strong>Hantec Markets</strong>? Clientes que abrirem conta pelo nosso link parceiro (ou que já operam na corretora) ganham <strong>50% de desconto imediato</strong> em qualquer plano:
@@ -464,12 +496,12 @@
                                 <i data-lucide="external-link" class="w-4 h-4"></i>
                                 1. ABRIR CONTA NA HANTEC
                             </a>
-                            <a href="https://wa.me/5522988102360?text=Ol%C3%A1%2C%20vou%20operar%20pela%20Hantec%20Markets%20e%20quero%20resgatar%20meus%2050%25%20de%20desconto%20na%20Hadassa%20IA!" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm font-bold transition-all shadow-lg shadow-green-500/20 flex items-center justify-center gap-2 hover:scale-105">
+                            <a href="https://wa.me/5522988102360?text=Ol%C3%A1%2C%20vou%20operar%20pela%20Hantec%20Markets%20e%20quero%20resgatar%20meus%2050%25%20de%20desconto%20na%20Hadassa%20IA%20Pr%C3%B3!" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-6 py-3.5 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white text-sm font-bold transition-all shadow-lg shadow-green-500/20 flex items-center justify-center gap-2 hover:scale-105">
                                 <i data-lucide="message-circle" class="w-4 h-4"></i>
                                 2. PEDIR CUPOM DE 50% OFF
                             </a>
                         </div>
-                        <p class="text-[11px] text-zinc-500 mt-4">* Prefere usar outra corretora? Sem problemas: escolha um dos planos abaixo e opere em qualquer corretora MT5.</p>
+                        <p class="text-[11px] text-zinc-500 mt-4">* Prefere usar outra corretora ou Mesa Proprietária? Sem problemas: escolha um dos planos abaixo e opere em qualquer plataforma MT5.</p>
                     </div>
                 </div>
             </div>
@@ -482,7 +514,7 @@
                     <div>
                         <span class="text-zinc-500 text-xs font-bold tracking-[0.25em] uppercase">Plano de Entrada</span>
                         <h3 class="text-2xl font-display font-black text-white mt-3 mb-2 uppercase tracking-tighter">Assinatura Mensal</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed mb-6">Ideal para testar e validar a automação em conta real ou demo com baixo investimento inicial.</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6">Ideal para testar e validar a automação em conta real, demo ou desafio de Mesa Proprietária com baixo investimento inicial.</p>
                         
                         <div class="my-8 py-6 rounded-2xl bg-white/[0.02] border border-white/5">
                             <span class="text-zinc-400 text-xs uppercase tracking-widest block mb-1">Apenas</span>
@@ -495,9 +527,9 @@
                         </div>
 
                         <ul class="text-left text-sm text-zinc-300 space-y-3.5 mb-8">
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Licença Oficial Hadassa IA (MT5)</li>
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Setups Otimizados Inclusos</li>
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Sem Limite de Contas (Real ou Demo)</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Licença Oficial Hadassa IA Pró v3.7 (MT5)</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> 5 Perfis de Estratégia + Blindagem Notícias</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Sem Limite de Contas (Real, Demo ou Mesa Prop)</li>
                             <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Tutorial Passo a Passo de Instalação</li>
                             <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Suporte Direto via WhatsApp</li>
                         </ul>
@@ -511,12 +543,12 @@
                 <!-- PLANO VITALÍCIO -->
                 <div class="plan-card bg-[#0f1117] p-8 md:p-10 rounded-[32px] text-center border-2 border-emerald-500 relative overflow-hidden shadow-2xl shadow-emerald-500/15 hover:scale-[1.02] transition-all duration-300 z-10 flex flex-col justify-between">
                     <div class="absolute top-4 right-4 px-3.5 py-1 rounded-full bg-emerald-500 text-black text-[10px] font-black tracking-widest uppercase shadow-lg">Mais Escolhido</div>
-                    <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 to-emerald-500"></div>
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-amber-400 via-blue-500 to-emerald-500"></div>
                     
                     <div>
                         <span class="text-emerald-400 text-xs font-bold tracking-[0.25em] uppercase">Melhor Custo-Benefício</span>
                         <h3 class="text-2xl font-display font-black text-white mt-3 mb-2 uppercase tracking-tighter">Acesso Vitalício</h3>
-                        <p class="text-zinc-300 text-sm leading-relaxed mb-4">Pague uma única vez e tenha a Hadassa IA para sempre. Sem mensalidades, 100% sua.</p>
+                        <p class="text-zinc-300 text-sm leading-relaxed mb-4">Pague uma única vez e tenha o Hadassa IA Pró v3.7 para sempre. Sem mensalidades, 100% seu.</p>
                         
                         <div class="my-6 py-6 px-4 rounded-2xl bg-emerald-500/[0.06] border border-emerald-500/20">
                             <span class="text-emerald-400 text-xs font-bold uppercase bg-emerald-500/15 px-3 py-1 rounded-full inline-block mb-2">Equivale a menos de 7 meses</span>
@@ -532,8 +564,8 @@
                         
                         <ul class="text-left text-sm text-white space-y-3.5 mb-8">
                             <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> <strong>Tudo do Plano Mensal incluso</strong></li>
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> <strong>Licença Vitalícia</strong> (Sem renovações)</li>
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> <strong>BÔNUS: Robô de Histórico</strong> (Avaliado em R$ 297)</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> <strong>Licença Vitalícia v3.7</strong> (Sem renovações)</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> <strong>BÔNUS: Setups Mesa Prop + Robô de Histórico</strong></li>
                             <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> Todas as Atualizações Futuras Gratuitas</li>
                             <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> Suporte VIP Prioritário</li>
                         </ul>
@@ -553,7 +585,7 @@
                 </div>
                 <div>
                     <h4 class="text-white font-display font-bold text-lg mb-1">Garantia Incondicional de 7 Dias pela Hotmart</h4>
-                    <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">Teste a Hadassa IA na sua conta. Se por qualquer motivo você achar que a automação não é para você, basta solicitar o reembolso em até 7 dias direto na Hotmart e devolvemos 100% do seu investimento.</p>
+                    <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">Teste o Hadassa IA Pró na sua conta. Se por qualquer motivo você achar que a automação não é para você, basta solicitar o reembolso em até 7 dias direto na Hotmart e devolvemos 100% do seu investimento.</p>
                 </div>
             </div>
         </div>
@@ -572,11 +604,31 @@
             <div class="fade-up glass p-6 sm:p-8 rounded-[32px]">
                 <div class="faq-item border-b border-white/10 last:border-0">
                     <button onclick="toggleFAQ(this)" class="w-full py-5 flex items-center justify-between text-left group gap-4">
+                        <span class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">Por que o Hadassa IA Pró não opera em horário fixo como a maioria?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-zinc-500 shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 opacity-0 overflow-hidden">
+                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Porque operar apenas no horário fixo de abertura coloca você junto com toda a manada de varejo, exatamente onde os grandes bancos caçam liquidez e violam os canais. O Hadassa IA Pró monitora toda a janela operacional (das 04h às 18h MT5) e marca a Fimathe de forma dinâmica nos Topos e Fundos estratégicos após ondas reais de preço.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border-b border-white/10 last:border-0">
+                    <button onclick="toggleFAQ(this)" class="w-full py-5 flex items-center justify-between text-left group gap-4">
+                        <span class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">Posso usar em Mesas Proprietárias (FundedNext, FTMO, etc.)? E a regra dos 4 minutos?</span>
+                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-zinc-500 shrink-0 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 opacity-0 overflow-hidden">
+                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Sim! O Hadassa IA Pró v3.7 foi otimizado para Mesas Proprietárias: opera com Stop Loss e Take Profit reais em 100% das ordens, possui Blindagem Anti-Notícias (fecha posições antes de eventos de alto impacto), trava de Spread Máximo e mais de 85% das operações duram acima de 4 minutos (média de 27 minutos por trade), atendendo com folga às regras anti-HFT das mesas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item border-b border-white/10 last:border-0">
+                    <button onclick="toggleFAQ(this)" class="w-full py-5 flex items-center justify-between text-left group gap-4">
                         <span class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">Preciso deixar o computador ligado 24 horas?</span>
                         <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-zinc-500 shrink-0 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-answer max-h-0 opacity-0 overflow-hidden">
-                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Você tem duas opções: deixar seu PC ligado durante os horários em que deseja operar, ou contratar uma VPS (servidor em nuvem que custa cerca de R$ 30/mês). No nosso treinamento bônus ensinamos passo a passo como colocar o robô na VPS para rodar 24/5 mesmo com seu computador desligado.</p>
+                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Você tem duas opções: deixar seu PC ligado durante a janela operacional, ou contratar uma VPS (servidor em nuvem que custa cerca de R$ 30/mês). No nosso treinamento bônus ensinamos passo a passo como colocar o robô na VPS para rodar 24/5 mesmo com seu computador desligado.</p>
                     </div>
                 </div>
 
@@ -586,7 +638,7 @@
                         <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-zinc-500 shrink-0 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-answer max-h-0 opacity-0 overflow-hidden">
-                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Sim! Enquanto a Hadassa IA roda no MetaTrader 5 do seu computador ou VPS, você pode acompanhar todas as entradas, o Stop indo para o Break Even e os lucros em tempo real diretamente pelo aplicativo do MT5 no seu celular (Android ou iPhone).</p>
+                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Sim! Enquanto o Hadassa IA Pró roda no MetaTrader 5 do seu computador ou VPS, você recebe notificações Push no celular e acompanha todas as entradas, expansões do Take Inteligente e lucros diretamente pelo aplicativo do MT5 (Android ou iPhone).</p>
                     </div>
                 </div>
 
@@ -596,27 +648,7 @@
                         <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-zinc-500 shrink-0 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-answer max-h-0 opacity-0 overflow-hidden">
-                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Funciona em qualquer corretora que utilize a plataforma MetaTrader 5 (como Hantec Markets, XM, Exness, IC Markets, etc.). Você pode operar Ouro (XAUUSD), Pares de Forex (EURUSD, GBPUSD, USDJPY) e Índices (HK50, US30, Nasdaq).</p>
-                    </div>
-                </div>
-
-                <div class="faq-item border-b border-white/10 last:border-0">
-                    <button onclick="toggleFAQ(this)" class="w-full py-5 flex items-center justify-between text-left group gap-4">
-                        <span class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">Qual é o valor mínimo de banca recomendado?</span>
-                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-zinc-500 shrink-0 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer max-h-0 opacity-0 overflow-hidden">
-                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Você pode começar com contas Cent ou Micro a partir de $10 a $50 dólares para validar, ou contas Standard a partir de $100 a $200 dólares, ajustando o lote proporcionalmente ao seu gerenciamento de risco.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item border-b border-white/10 last:border-0">
-                    <button onclick="toggleFAQ(this)" class="w-full py-5 flex items-center justify-between text-left group gap-4">
-                        <span class="text-base font-bold text-white group-hover:text-blue-400 transition-colors">Posso usar em Mesas Proprietárias (FundedNext, FTMO, etc.)?</span>
-                        <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-zinc-500 shrink-0 transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer max-h-0 opacity-0 overflow-hidden">
-                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Sim! A Hadassa IA opera seguindo comportamento técnico real (Fimathe), posiciona Stop Loss e Take Profit definidos em todas as ordens e permite gerenciar o risco por operação para respeitar os limites de drawdown das mesas proprietárias.</p>
+                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Funciona em qualquer corretora ou Mesa Proprietária que utilize o MetaTrader 5 (Hantec Markets, Exness, IC Markets, FTMO, FundedNext, etc.). É altamente otimizado para Ouro (XAUUSD) em M1 e M5, além de operar Pares de Forex (GBPUSD, USDJPY, EURUSD) e Índices.</p>
                     </div>
                 </div>
 
@@ -626,7 +658,7 @@
                         <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-zinc-500 shrink-0 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-answer max-h-0 opacity-0 overflow-hidden">
-                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Não! O robô já acompanha setups otimizados prontos e um painel intuitivo em português. Em menos de 5 minutos você carrega o arquivo no seu MT5 e deixa tudo pronto para operar.</p>
+                        <p class="pb-5 text-zinc-400 text-sm leading-relaxed">Não! O robô já possui uma chave seletora com os 5 Perfis de Estratégia prontos e um painel executivo interativo em português. Em menos de 5 minutos você ativa sua licença e deixa tudo pronto para operar.</p>
                     </div>
                 </div>
             </div>
@@ -639,8 +671,8 @@
             <div class="fade-up relative p-8 sm:p-12 rounded-[40px] bg-gradient-main overflow-hidden text-center shadow-2xl shadow-blue-500/20">
                 <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 pointer-events-none"></div>
                 <div class="relative z-10">
-                    <h2 class="text-3xl md:text-5xl font-display font-black text-white mb-6 uppercase tracking-tighter">Pare de lutar contra o sono</h2>
-                    <p class="text-base sm:text-lg text-white/90 max-w-2xl mx-auto mb-10">Hoje de madrugada o mercado vai entregar mais uma oportunidade limpa na Fimathe. Você vai perder a entrada dormindo ou deixar a Hadassa IA trabalhar por você?</p>
+                    <h2 class="text-3xl md:text-5xl font-display font-black text-white mb-6 uppercase tracking-tighter">Saia da manada hoje mesmo</h2>
+                    <p class="text-base sm:text-lg text-white/90 max-w-2xl mx-auto mb-10">Enquanto a maioria continua sendo estopada nos horários fixos de abertura, o Hadassa IA Pró v3.7 caça os Topos e Fundos estratégicos com precisão matemática para a sua conta ou Mesa Proprietária.</p>
                     
                     <div class="mb-10">
                         <span class="block text-white/90 text-xs font-bold tracking-widest uppercase mb-4">Condição Especial Encerrando Em:</span>
@@ -673,14 +705,14 @@
     <footer class="py-12 border-t border-white/10 bg-black">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <div class="flex items-center justify-center gap-3 mb-6">
-                <img src="1000096943.png" alt="Ícone Hadassa IA" class="w-8 h-8 rounded-lg object-cover border border-white/10">
-                <span class="font-display font-black text-xl tracking-tighter text-white uppercase">HADASSA <span class="text-blue-500">IA</span></span>
+                <img src="109047.jpg" onerror="this.onerror=null;this.src='109047_2.jpg';" alt="Logo Hadassa IA Pró" class="w-10 h-10 rounded-full object-cover border border-amber-400/40">
+                <span class="font-display font-black text-xl tracking-tighter text-white uppercase">HADASSA <span class="text-amber-400">IA</span> <span class="text-red-500">PRÓ</span></span>
             </div>
 
-            <p class="text-zinc-500 text-sm mb-6">© 2026 HADASSA IA • Todos os direitos reservados</p>
+            <p class="text-zinc-500 text-sm mb-6">© 2026 HADASSA IA PRÓ • Todos os direitos reservados</p>
             
             <div class="max-w-3xl mx-auto p-5 rounded-2xl bg-white/[0.02] border border-white/5 text-zinc-500 text-[10px] leading-relaxed uppercase tracking-wider">
-                Aviso Legal: Negociar no mercado financeiro (Forex, Metais, Índices e CFDs) envolve alto nível de risco e pode não ser adequado para todos os perfis de investidores. O Hadassa IA é uma ferramenta tecnológica de automação de estratégia para MetaTrader 5, e resultados passados não constituem garantia de rentabilidade futura. Opere sempre com gerenciamento de risco responsável.
+                Aviso Legal: Negociar no mercado financeiro (Forex, Metais, Índices e CFDs) envolve alto nível de risco e pode não ser adequado para todos os perfis de investidores. O Hadassa IA Pró é uma ferramenta tecnológica de automação de estratégia para MetaTrader 5, e resultados passados não constituem garantia de rentabilidade futura. Opere sempre com gerenciamento de risco responsável.
             </div>
         </div>
     </footer>
@@ -723,11 +755,11 @@
             const nav = document.getElementById('navbar');
             if (!nav) return;
             if (window.scrollY > 40) {
-                nav.classList.add('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'py-3.5');
-                nav.classList.remove('bg-transparent', 'py-5');
+                nav.classList.add('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'py-3', 'top-0');
+                nav.classList.remove('bg-transparent', 'py-4', 'top-8');
             } else {
-                nav.classList.remove('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'py-3.5');
-                nav.classList.add('bg-transparent', 'py-5');
+                nav.classList.remove('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'py-3', 'top-0');
+                nav.classList.add('bg-transparent', 'py-4', 'top-8');
             }
         });
 
@@ -766,7 +798,7 @@
             });
         });
 
-        // Lógica do FAQ corrigida (compatível com SVG gerado pelo Lucide)
+        // Lógica do FAQ (compatível com SVG gerado pelo Lucide)
         function toggleFAQ(button) {
             const container = button.closest('.faq-item');
             if (!container) return;
