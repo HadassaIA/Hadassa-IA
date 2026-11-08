@@ -49,8 +49,22 @@
         }
         .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.21, 0.47, 0.32, 0.98); }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
-        .text-gradient { background: linear-gradient(to right, #0A84FF, #00C853); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .text-gradient-gold { background: linear-gradient(to right, #FDE68A, #F59E0B, #EF4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-gradient { 
+            background: linear-gradient(to right, #0A84FF, #00C853); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            display: inline-block;
+            padding-top: 0.1em;
+            padding-bottom: 0.1em;
+        }
+        .text-gradient-gold { 
+            background: linear-gradient(to right, #FDE68A, #F59E0B, #EF4444); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            display: inline-block;
+            padding-top: 0.1em;
+            padding-bottom: 0.1em;
+        }
         .bg-gradient-main { background: linear-gradient(135deg, #0A84FF, #00C853); }
         .glass { background: rgba(15, 15, 20, 0.65); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(16px); }
         
@@ -61,7 +75,7 @@
 
         .faq-answer { transition: max-height 0.35s ease-out, opacity 0.3s ease-out; }
         .timer-box { background: rgba(0, 0, 0, 0.45); padding: 12px 16px; border-radius: 16px; min-width: 76px; border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(8px); }
-        .plan-card { scroll-margin-top: 140px; }
+        .plan-card { scroll-margin-top: 160px; }
         
         .pulse-cta { animation: pulseGlow 2.4s ease-in-out infinite; }
         @keyframes pulseGlow {
@@ -82,22 +96,23 @@
 </head>
 <body class="selection:bg-blue-500/30 overflow-x-hidden">
 
-    <!-- TOP BAR DE IMPACTO -->
-    <div class="w-full bg-gradient-to-r from-amber-500/15 via-blue-500/15 to-emerald-500/15 border-b border-white/10 py-2 px-4 text-center relative z-50">
-        <p class="text-[11px] sm:text-xs font-bold tracking-wider uppercase text-zinc-200 flex items-center justify-center gap-2 flex-wrap">
-            <span class="px-2 py-0.5 rounded bg-amber-500 text-black font-black text-[10px]">NOVA VERSÃO 3.7</span>
-            <span>🔥 Opere diferente da manada que só pega abertura • Scalper de Topos e Fundos Aprovado em Mesas Proprietárias</span>
-        </p>
-    </div>
+    <!-- HEADER UNIFICADO (TOP BAR + NAVBAR SEM SOBREPOSIÇÃO) -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-black/85 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <!-- Barra Superior de Destaque -->
+        <div class="w-full bg-gradient-to-r from-amber-500/20 via-blue-500/15 to-emerald-500/20 border-b border-white/10 py-2 px-4 text-center">
+            <p class="text-[11px] sm:text-xs font-bold tracking-wider uppercase text-zinc-100 flex items-center justify-center gap-2 flex-wrap leading-snug">
+                <span class="px-2 py-0.5 rounded bg-amber-500 text-black font-black text-[10px] shrink-0">VERSÃO 3.7</span>
+                <span>Opere diferente da manada que só pega abertura • Scalper de Topos e Fundos p/ Mesas Proprietárias</span>
+            </p>
+        </div>
 
-    <!-- NAVBAR -->
-    <nav id="navbar" class="fixed top-8 w-full z-50 transition-all duration-300 py-4">
-        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 text-white group">
-                <img src="109047.jpg" onerror="this.onerror=null;this.src='109047_2.jpg';" alt="Logo Hadassa IA Pró" class="w-11 h-11 rounded-full object-cover border-2 border-amber-400/50 shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
-                <div class="flex flex-col">
-                    <span class="font-display font-black text-base sm:text-xl tracking-tighter uppercase leading-none">HADASSA <span class="text-amber-400">IA</span> <span class="text-red-500">PRÓ</span></span>
-                    <span class="text-[10px] font-mono text-zinc-400 tracking-widest uppercase">Intelligent Scalper</span>
+        <!-- Barra de Navegação Principal -->
+        <nav id="navbar" class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between transition-all duration-300">
+            <a href="#" class="flex items-center gap-3 text-white group shrink-0">
+                <img src="109047.jpg" onerror="this.onerror=null;this.src='109047_2.jpg';" alt="Logo Hadassa IA Pró" class="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border-2 border-amber-400/50 shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                <div class="flex flex-col text-left">
+                    <span class="font-display font-black text-sm sm:text-xl tracking-tighter uppercase leading-tight">HADASSA <span class="text-amber-400">IA</span> <span class="text-red-500">PRÓ</span></span>
+                    <span class="text-[9px] sm:text-[10px] font-mono text-zinc-400 tracking-widest uppercase leading-tight">Intelligent Scalper</span>
                 </div>
             </a>
             
@@ -109,17 +124,17 @@
                 <a href="#faq" class="hover:text-white transition-colors">Dúvidas</a>
             </div>
 
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2.5 sm:gap-3">
                 <a href="https://www.instagram.com/hadassaia?igsh=MWhvaTJkczg2cHk4Zg==" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/5 transition-all group">
                     <i data-lucide="instagram" class="w-4 h-4 text-zinc-400 group-hover:text-blue-500"></i>
                     <span class="text-xs font-bold text-zinc-400 group-hover:text-white">@hadassaia</span>
                 </a>
-                <a href="#planos" class="px-5 sm:px-6 py-2.5 rounded-full bg-white text-black text-xs md:text-sm font-extrabold hover:bg-zinc-200 transition-all hover:scale-105 shadow-lg">
+                <a href="#planos" class="px-4 sm:px-6 py-2.5 rounded-full bg-white text-black text-xs md:text-sm font-extrabold hover:bg-zinc-200 transition-all hover:scale-105 shadow-lg whitespace-nowrap">
                     ACESSAR AGORA
                 </a>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
     <a href="https://wa.me/5522988102360?text=Ol%C3%A1%2C%20eu%20Gostaria%20de%20mais%20Informa%C3%A7%C3%B5es%20sobre%20a%20Hadassa%20IA%20Pr%C3%B3" target="_blank" rel="noopener noreferrer" aria-label="Falar com Suporte no WhatsApp" class="fixed bottom-6 right-6 z-50 flex items-center gap-3 px-5 py-3.5 md:px-6 md:py-4 rounded-full bg-[#25D366] text-white font-bold shadow-2xl shadow-green-500/30 hover:scale-110 transition-transform border border-white/20">
@@ -129,31 +144,31 @@
         <span class="hidden md:inline text-sm">Falar com Suporte</span>
     </a>
 
-    <!-- HERO SECTION -->
-    <section class="relative min-h-screen flex flex-col justify-center pt-28 pb-20 overflow-hidden">
+    <!-- HERO SECTION (COM RECUO SUPERIOR SEGURO) -->
+    <section class="relative min-h-screen flex flex-col justify-center pt-40 sm:pt-44 md:pt-48 pb-20 overflow-hidden">
         <div class="absolute inset-0 z-0 pointer-events-none">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(245,158,11,0.14),rgba(10,132,255,0.14),transparent_60%)]"></div>
             <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/80 to-[#050505]"></div>
         </div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center mt-4">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
             
             <!-- NOVA LOGOMARCA OFICIAL HADASSA IA PRÓ -->
             <div class="fade-up flex justify-center mb-8">
-                <div class="relative w-48 h-48 md:w-64 md:h-64 group">
+                <div class="relative w-44 h-44 sm:w-52 sm:h-52 md:w-64 md:h-64 group">
                     <div class="absolute inset-0 bg-gradient-to-tr from-amber-500/30 via-blue-500/20 to-red-500/25 rounded-full blur-3xl group-hover:blur-2xl transition-all duration-700"></div>
                     <img src="109047.jpg" onerror="this.onerror=null;this.src='109047_2.jpg';" alt="Logo Oficial Hadassa IA Pró" class="relative z-10 w-full h-full object-cover rounded-full border-2 border-amber-400/40 logo-ring group-hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
 
             <!-- APELO PRINCIPAL NO TOPO -->
-            <div class="fade-up inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs sm:text-sm font-extrabold tracking-widest uppercase mb-6 shadow-lg shadow-amber-500/10" style="transition-delay: 50ms;">
-                <i data-lucide="flame" class="w-4 h-4 text-red-500"></i>
-                OPERE DIFERENTE DA MANADA QUE SÓ PEGA ABERTURA
+            <div class="fade-up inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] sm:text-sm font-extrabold tracking-widest uppercase mb-6 shadow-lg shadow-amber-500/10" style="transition-delay: 50ms;">
+                <i data-lucide="flame" class="w-4 h-4 text-red-500 shrink-0"></i>
+                <span>OPERE DIFERENTE DA MANADA QUE SÓ PEGA ABERTURA</span>
             </div>
             
-            <h1 class="fade-up text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tighter leading-[1.1] mb-6 uppercase max-w-5xl mx-auto" style="transition-delay: 100ms;">
-                O Scalper que Marca a Fimathe nos <span class="text-gradient-gold block sm:inline">Topos e Fundos</span> Estratégicos
+            <h1 class="fade-up text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black tracking-tight leading-[1.25] mb-6 uppercase max-w-5xl mx-auto" style="transition-delay: 100ms;">
+                O Scalper que Marca a Fimathe nos <span class="text-gradient-gold">Topos e Fundos</span> Estratégicos
             </h1>
 
             <p class="fade-up text-base sm:text-lg md:text-xl text-zinc-300 max-w-3xl mx-auto mb-10 leading-relaxed" style="transition-delay: 200ms;">
@@ -209,12 +224,12 @@
     </section>
 
     <!-- SEÇÃO: POR QUE OPERAR DIFERENTE DA MANADA -->
-    <section id="features" class="py-24 relative">
+    <section id="features" class="py-24 relative scroll-mt-28">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="fade-up">
                     <span class="text-amber-400 text-xs font-bold tracking-[0.25em] uppercase mb-3 block">Inteligência Institucional vs. Varejo</span>
-                    <h2 class="text-3xl md:text-5xl font-display font-black mb-6 uppercase tracking-tighter">Por que a manada perde dinheiro na abertura?</h2>
+                    <h2 class="text-3xl md:text-5xl font-display font-black mb-6 uppercase tracking-tighter leading-tight">Por que a manada perde dinheiro na abertura?</h2>
                     <p class="text-zinc-400 max-w-2xl mx-auto">95% dos traders marcam canais exatamente no mesmo minuto de abertura. Os grandes players sabem disso, varrem os stops da manada e seguem sem você. Veja como o <strong class="text-white">Hadassa IA Pró</strong> vira esse jogo:</p>
                 </div>
             </div>
@@ -247,13 +262,13 @@
         </div>
     </section>
 
-    <!-- SEÇÃO: COMO FUNCIONA + PAINEL GRÁFICO FIMATHE -->
-    <section id="methodology" class="py-24 bg-white/[0.02] border-y border-white/5">
+    <!-- SEÇÃO: COMO FUNCIONA + PAINEL GRÁFICO FIMATHE (SEM SOBREPOSIÇÃO DE TEXTO) -->
+    <section id="methodology" class="py-24 bg-white/[0.02] border-y border-white/5 scroll-mt-28">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="fade-up">
                     <span class="text-emerald-400 text-xs font-bold tracking-[0.25em] uppercase mb-3 block">Engenharia da Versão 3.7</span>
-                    <h2 class="text-3xl md:text-5xl font-display font-black mb-6 uppercase tracking-tighter">Tecnologia Scalper de Alta Precisão</h2>
+                    <h2 class="text-3xl md:text-5xl font-display font-black mb-6 uppercase tracking-tighter leading-tight">Tecnologia Scalper de Alta Precisão</h2>
                     <p class="text-zinc-400 max-w-2xl mx-auto">Conheça a máquina de estados que transforma a leitura de Topos e Fundos da Fimathe em execução 100% automatizada.</p>
                 </div>
             </div>
@@ -291,93 +306,101 @@
                     </div>
                 </div>
                 
-                <!-- Simulador Visual MT5 Fimathe v3.7 -->
+                <!-- Simulador Visual MT5 Fimathe v3.7 (Colunas Separadas p/ Velas e Textos) -->
                 <div class="fade-up lg:col-span-6">
                     <div class="glass rounded-3xl border border-white/15 overflow-hidden shadow-2xl">
                         <!-- Barra de Topo Estilo MT5 -->
-                        <div class="bg-zinc-900/90 px-5 py-3.5 border-b border-white/10 flex items-center justify-between flex-wrap gap-2">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                                <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-                                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                                <span class="ml-2 text-xs font-mono text-zinc-300 font-bold">XAUUSD, M1 — Scalper Topo/Fundo</span>
+                        <div class="bg-zinc-900/90 px-4 sm:px-5 py-3.5 border-b border-white/10 flex items-center justify-between gap-2">
+                            <div class="flex items-center gap-2 min-w-0">
+                                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80 shrink-0"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80 shrink-0"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80 shrink-0"></span>
+                                <span class="ml-1.5 text-[11px] sm:text-xs font-mono text-zinc-300 font-bold truncate">XAUUSD, M1 — Scalper Topo/Fundo</span>
                             </div>
-                            <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30">
+                            <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 shrink-0">
                                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                                <span class="text-[11px] font-mono font-bold text-amber-400">HADASSA IA PRÓ v3.7</span>
+                                <span class="text-[10px] sm:text-[11px] font-mono font-bold text-amber-400">HADASSA PRÓ v3.7</span>
                             </div>
                         </div>
 
-                        <!-- Gráfico SVG Fimathe -->
-                        <div class="p-6 chart-grid relative bg-[#07090e]">
-                            <svg viewBox="0 0 500 310" class="w-full h-auto overflow-visible">
-                                <!-- Take Profit Expandido (Take Inteligente) -->
-                                <line x1="0" y1="30" x2="500" y2="30" stroke="#00C853" stroke-width="1.5" stroke-dasharray="6,4" />
-                                <rect x="340" y="16" width="155" height="20" rx="4" fill="#00C853" fill-opacity="0.18" stroke="#00C853" stroke-width="1"/>
-                                <text x="417" y="29" fill="#4ade80" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">TAKE 02 (TAKE INTELIGENTE)</text>
+                        <!-- Gráfico SVG Fimathe (Velas à Esquerda x=30..275 | Etiquetas Limpas à Direita x=310..492) -->
+                        <div class="p-4 sm:p-6 chart-grid relative bg-[#07090e]">
+                            <svg viewBox="0 0 500 320" class="w-full h-auto select-none">
+                                <!-- Faixas de Fundo dos Canais -->
+                                <rect x="10" y="150" width="480" height="55" fill="#0A84FF" fill-opacity="0.08" />
+                                <rect x="10" y="205" width="480" height="55" fill="#f59e0b" fill-opacity="0.06" />
 
-                                <!-- Take 01 / Trava de Estrutura -->
-                                <line x1="0" y1="90" x2="500" y2="90" stroke="#0A84FF" stroke-width="1.5" stroke-dasharray="4,4" />
-                                <rect x="340" y="76" width="155" height="20" rx="4" fill="#0A84FF" fill-opacity="0.18" stroke="#0A84FF" stroke-width="1"/>
-                                <text x="417" y="89" fill="#60a5fa" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">TAKE 01 (TRAVA SL LUCRO)</text>
+                                <!-- Linhas Horizontais Fimathe -->
+                                <line x1="10" y1="32"  x2="490" y2="32"  stroke="#00C853" stroke-width="1.5" stroke-dasharray="6,4" />
+                                <line x1="10" y1="92"  x2="490" y2="92"  stroke="#0A84FF" stroke-width="1.5" stroke-dasharray="4,4" />
+                                <line x1="10" y1="150" x2="490" y2="150" stroke="#0A84FF" stroke-width="2" />
+                                <line x1="10" y1="205" x2="490" y2="205" stroke="#0A84FF" stroke-width="1.5" stroke-dasharray="4,3" />
+                                <line x1="10" y1="260" x2="490" y2="260" stroke="#f59e0b" stroke-width="2" />
+                                <line x1="10" y1="286" x2="490" y2="286" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3,3" />
 
-                                <!-- C1 Fatiado (Caixa Azul Superior) -->
-                                <rect x="20" y="150" width="475" height="55" fill="#0A84FF" fill-opacity="0.09" />
-                                <line x1="0" y1="150" x2="500" y2="150" stroke="#0A84FF" stroke-width="2" />
-                                <line x1="0" y1="205" x2="500" y2="205" stroke="#0A84FF" stroke-width="1.5" stroke-dasharray="4,3" />
-                                <text x="30" y="166" fill="#60a5fa" font-size="9.5" font-family="monospace" font-weight="bold">C1 (FATIAMENTO INTELIGENTE)</text>
-
-                                <!-- CA Fundo Estratégico (Caixa Inferior) -->
-                                <rect x="20" y="205" width="475" height="55" fill="#f59e0b" fill-opacity="0.07" />
-                                <line x1="0" y1="260" x2="500" y2="260" stroke="#f59e0b" stroke-width="2" />
-                                <text x="30" y="252" fill="#fbbf24" font-size="9.5" font-family="monospace" font-weight="bold">CA (FUNDO ESTRATÉGICO RASTREADO)</text>
-
-                                <!-- Stop Fora Curto -->
-                                <line x1="0" y1="276" x2="500" y2="276" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3,3" />
-                                <text x="30" y="290" fill="#f87171" font-size="9" font-family="monospace" font-weight="bold">STOP LOSS CURTO (PROTEÇÃO 0,5%)</text>
-
-                                <!-- Candles Simulados (Pernada de Queda + Pullback no Fundo + Rompimento) -->
+                                <!-- Candles Simulados (Totalmente na Coluna Esquerda x=35..265) -->
                                 <!-- Candle 1 -->
-                                <line x1="55" y1="165" x2="55" y2="225" stroke="#ef4444" stroke-width="1.5"/>
-                                <rect x="49" y="175" width="12" height="42" rx="1" fill="#ef4444"/>
+                                <line x1="38" y1="168" x2="38" y2="225" stroke="#ef4444" stroke-width="1.5"/>
+                                <rect x="32" y="176" width="12" height="40" rx="1" fill="#ef4444"/>
                                 <!-- Candle 2 (Fundo Extremo) -->
-                                <line x1="90" y1="205" x2="90" y2="260" stroke="#ef4444" stroke-width="1.5"/>
-                                <rect x="84" y="212" width="12" height="42" rx="1" fill="#ef4444"/>
+                                <line x1="66" y1="205" x2="66" y2="260" stroke="#ef4444" stroke-width="1.5"/>
+                                <rect x="60" y="212" width="12" height="42" rx="1" fill="#ef4444"/>
                                 <!-- Candle 3 -->
-                                <line x1="125" y1="195" x2="125" y2="248" stroke="#10b981" stroke-width="1.5"/>
-                                <rect x="119" y="205" width="12" height="35" rx="1" fill="#10b981"/>
+                                <line x1="94" y1="195" x2="94" y2="248" stroke="#10b981" stroke-width="1.5"/>
+                                <rect x="88" y="205" width="12" height="35" rx="1" fill="#10b981"/>
                                 <!-- Candle 4 -->
-                                <line x1="160" y1="180" x2="160" y2="230" stroke="#ef4444" stroke-width="1.5"/>
-                                <rect x="154" y="190" width="12" height="30" rx="1" fill="#ef4444"/>
+                                <line x1="122" y1="182" x2="122" y2="230" stroke="#ef4444" stroke-width="1.5"/>
+                                <rect x="116" y="190" width="12" height="30" rx="1" fill="#ef4444"/>
                                 <!-- Candle 5 (Armou C1 no Fundo) -->
-                                <line x1="195" y1="152" x2="195" y2="210" stroke="#10b981" stroke-width="1.5"/>
-                                <rect x="189" y="160" width="12" height="42" rx="1" fill="#10b981"/>
+                                <line x1="150" y1="154" x2="150" y2="210" stroke="#10b981" stroke-width="1.5"/>
+                                <rect x="144" y="160" width="12" height="42" rx="1" fill="#10b981"/>
                                 <!-- Candle 6 (Rompimento Confirmado Fora da Caixa) -->
-                                <line x1="238" y1="115" x2="238" y2="168" stroke="#00C853" stroke-width="2"/>
-                                <rect x="231" y="122" width="14" height="38" rx="1.5" fill="#00C853"/>
-                                <!-- Gatilho Buy Badge -->
-                                <circle cx="238" cy="122" r="5" fill="#ffffff" stroke="#00C853" stroke-width="3"/>
-                                <rect x="168" y="96" width="140" height="20" rx="4" fill="#00C853" />
-                                <text x="238" y="109" fill="#050505" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">COMPRA NO ROMPIMENTO</text>
-
+                                <line x1="180" y1="115" x2="180" y2="168" stroke="#00C853" stroke-width="2"/>
+                                <rect x="173" y="122" width="14" height="38" rx="1.5" fill="#00C853"/>
                                 <!-- Candle 7 -->
-                                <line x1="280" y1="82" x2="280" y2="132" stroke="#00C853" stroke-width="2"/>
-                                <rect x="274" y="90" width="12" height="34" rx="1" fill="#00C853"/>
+                                <line x1="210" y1="84" x2="210" y2="132" stroke="#00C853" stroke-width="2"/>
+                                <rect x="204" y="92" width="12" height="32" rx="1" fill="#00C853"/>
                                 <!-- Candle 8 -->
-                                <line x1="315" y1="58" x2="315" y2="105" stroke="#00C853" stroke-width="2"/>
-                                <rect x="309" y="65" width="12" height="28" rx="1" fill="#00C853"/>
-                                <!-- Candle 9 (Bateu no Take Expandido) -->
-                                <line x1="350" y1="22" x2="350" y2="75" stroke="#00C853" stroke-width="2"/>
-                                <rect x="344" y="30" width="12" height="38" rx="1" fill="#00C853"/>
+                                <line x1="238" y1="58" x2="238" y2="102" stroke="#00C853" stroke-width="2"/>
+                                <rect x="232" y="65" width="12" height="28" rx="1" fill="#00C853"/>
+                                <!-- Candle 9 (Bateu no Take 02 Expandido) -->
+                                <line x1="266" y1="24" x2="266" y2="75" stroke="#00C853" stroke-width="2"/>
+                                <rect x="260" y="32" width="12" height="36" rx="1" fill="#00C853"/>
+
+                                <!-- Ponto e Etiqueta de Compra (Acima do Candle 6, sem tocar em outras legendas) -->
+                                <circle cx="180" cy="122" r="4.5" fill="#ffffff" stroke="#00C853" stroke-width="2.5"/>
+                                <rect x="52" y="108" width="118" height="20" rx="4" fill="#00C853" />
+                                <text x="111" y="121" fill="#050505" font-size="9" font-family="monospace" font-weight="bold" text-anchor="middle">COMPRA EXECUTADA</text>
+
+                                <!-- COLUNA DIREITA DE ETIQUETAS (x=312..490 — ZERO SOBREPOSIÇÃO) -->
+                                <!-- Etiqueta Take 02 -->
+                                <rect x="312" y="20" width="178" height="22" rx="4" fill="#071a12" stroke="#00C853" stroke-width="1"/>
+                                <text x="401" y="34" fill="#4ade80" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">TAKE 02 (TAKE INTELIGENTE)</text>
+
+                                <!-- Etiqueta Take 01 -->
+                                <rect x="312" y="80" width="178" height="22" rx="4" fill="#081629" stroke="#0A84FF" stroke-width="1"/>
+                                <text x="401" y="94" fill="#60a5fa" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">TAKE 01 (TRAVA SL LUCRO)</text>
+
+                                <!-- Etiqueta C1 Fatiado -->
+                                <rect x="312" y="166" width="178" height="22" rx="4" fill="#081629" stroke="#0A84FF" stroke-width="1"/>
+                                <text x="401" y="180" fill="#93c5fd" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">C1 (CANAL FATIADO)</text>
+
+                                <!-- Etiqueta CA Fundo -->
+                                <rect x="312" y="222" width="178" height="22" rx="4" fill="#211605" stroke="#f59e0b" stroke-width="1"/>
+                                <text x="401" y="236" fill="#fbbf24" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">CA (FUNDO ESTRATÉGICO)</text>
+
+                                <!-- Etiqueta Stop Loss -->
+                                <rect x="312" y="275" width="178" height="22" rx="4" fill="#240b0b" stroke="#ef4444" stroke-width="1"/>
+                                <text x="401" y="289" fill="#f87171" font-size="9.5" font-family="monospace" font-weight="bold" text-anchor="middle">STOP CURTO (RISCO 0,5%)</text>
                             </svg>
 
                             <!-- Painel Inferior de Telemetria -->
-                            <div class="mt-4 p-4 rounded-2xl bg-black/80 backdrop-blur-md border border-white/10 grid grid-cols-3 gap-4 text-center">
+                            <div class="mt-4 p-4 rounded-2xl bg-black/80 backdrop-blur-md border border-white/10 grid grid-cols-3 gap-2 sm:gap-4 text-center">
                                 <div>
                                     <span class="text-[10px] font-bold text-zinc-500 uppercase block">Estratégia</span>
                                     <span class="text-xs sm:text-sm font-display font-bold text-amber-400">5 Perfis (01 a 05)</span>
                                 </div>
-                                <div class="border-x border-white/10">
+                                <div class="border-x border-white/10 px-1">
                                     <span class="text-[10px] font-bold text-zinc-500 uppercase block">Blindagem Prop</span>
                                     <span class="text-xs sm:text-sm font-display font-bold text-blue-400">Notícia &amp; Spread ON</span>
                                 </div>
@@ -394,7 +417,7 @@
     </section>
 
     <!-- SEÇÃO: BÔNUS -->
-    <section id="bonus" class="py-24">
+    <section id="bonus" class="py-24 scroll-mt-28">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="fade-up">
@@ -406,7 +429,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="fade-up bg-gradient-to-br from-[#121318] to-[#0a0a0c] border border-white/10 hover:border-emerald-500/40 transition-all p-8 rounded-3xl flex flex-col sm:flex-row gap-6">
                     <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 flex items-center justify-center shrink-0">
-                        <i data-lucide="Sliders" class="w-7 h-7"></i>
+                        <i data-lucide="sliders" class="w-7 h-7"></i>
                     </div>
                     <div>
                         <div class="inline-block mb-2 text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3 py-0.5 rounded-full">
@@ -439,8 +462,8 @@
         </div>
     </section>
 
-    <!-- SEÇÃO: PLANOS E PARCERIA HANTEC -->
-    <section id="planos" class="py-24 bg-white/[0.02] border-t border-white/5 scroll-mt-20">
+    <!-- SEÇÃO: PLANOS E PARCERIA HANTEC (ATUALIZADA COM OS NOVOS LINKS E PREÇOS) -->
+    <section id="planos" class="py-24 bg-white/[0.02] border-t border-white/5 scroll-mt-28">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="fade-up">
@@ -506,72 +529,96 @@
                 </div>
             </div>
 
-            <!-- CARDS DE PLANOS -->
-            <div class="fade-up grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-5xl mx-auto items-stretch">
+            <!-- CARDS DE PLANOS (MENSAL, ANUAL E VITALÍCIO) -->
+            <div class="fade-up grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 max-w-7xl mx-auto items-stretch">
                 
-                <!-- PLANO MENSAL -->
-                <div class="plan-card bg-[#0a0a0d] p-8 md:p-10 rounded-[32px] text-center border border-white/10 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between">
+                <!-- PLANO 1: MENSAL -->
+                <div class="plan-card bg-[#0a0a0d] p-8 rounded-[32px] text-center border border-white/10 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <span class="text-zinc-500 text-xs font-bold tracking-[0.25em] uppercase">Plano de Entrada</span>
                         <h3 class="text-2xl font-display font-black text-white mt-3 mb-2 uppercase tracking-tighter">Assinatura Mensal</h3>
-                        <p class="text-zinc-400 text-sm leading-relaxed mb-6">Ideal para testar e validar a automação em conta real, demo ou desafio de Mesa Proprietária com baixo investimento inicial.</p>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6">Ideal para testar e validar a automação em conta real, demo ou desafio de Mesa Proprietária.</p>
                         
                         <div class="my-8 py-6 rounded-2xl bg-white/[0.02] border border-white/5">
                             <span class="text-zinc-400 text-xs uppercase tracking-widest block mb-1">Apenas</span>
                             <div class="flex items-baseline justify-center gap-1">
-                                <span class="text-white text-2xl font-bold">R$</span>
-                                <span class="text-5xl font-display font-black text-white tracking-tighter">59,90</span>
+                                <span class="text-white text-xl font-bold">R$</span>
+                                <span class="text-5xl font-display font-black text-white tracking-tighter">40,00</span>
                                 <span class="text-zinc-400 text-sm">/mês</span>
                             </div>
                             <span class="text-[11px] text-zinc-500 mt-1 block">Cancele quando quiser, sem fidelidade</span>
                         </div>
 
                         <ul class="text-left text-sm text-zinc-300 space-y-3.5 mb-8">
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Licença Oficial Hadassa IA Pró v3.7 (MT5)</li>
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> 5 Perfis de Estratégia + Blindagem Notícias</li>
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Sem Limite de Contas (Real, Demo ou Mesa Prop)</li>
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Tutorial Passo a Passo de Instalação</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Licença Oficial Hadassa IA Pró v3.7</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> 5 Perfis de Estratégia + Blindagem</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Sem Limite de Contas (MT5)</li>
                             <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Suporte Direto via WhatsApp</li>
                         </ul>
                     </div>
 
-                    <a href="https://pay.hotmart.com/Y106567645M?off=twb1xvdx" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-full bg-white/10 text-white border border-white/20 font-bold hover:bg-white hover:text-black transition-all">
+                    <a href="https://pay.hotmart.com/K108394716Q?off=yag5bihr" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-full bg-white/10 text-white border border-white/20 font-bold hover:bg-white hover:text-black transition-all">
                         ASSINAR PLANO MENSAL
                     </a>
                 </div>
 
-                <!-- PLANO VITALÍCIO -->
-                <div class="plan-card bg-[#0f1117] p-8 md:p-10 rounded-[32px] text-center border-2 border-emerald-500 relative overflow-hidden shadow-2xl shadow-emerald-500/15 hover:scale-[1.02] transition-all duration-300 z-10 flex flex-col justify-between">
-                    <div class="absolute top-4 right-4 px-3.5 py-1 rounded-full bg-emerald-500 text-black text-[10px] font-black tracking-widest uppercase shadow-lg">Mais Escolhido</div>
+                <!-- PLANO 2: ANUAL -->
+                <div class="plan-card bg-[#0e121d] p-8 rounded-[32px] text-center border border-blue-500/40 hover:border-blue-500 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <span class="text-blue-400 text-xs font-bold tracking-[0.25em] uppercase">Mais Econômico</span>
+                        <h3 class="text-2xl font-display font-black text-white mt-3 mb-2 uppercase tracking-tighter">Assinatura Anual</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed mb-6">Para quem busca constância e quer garantir acesso contínuo por 12 meses completos.</p>
+                        
+                        <div class="my-8 py-6 rounded-2xl bg-blue-500/[0.05] border border-blue-500/20">
+                            <span class="text-blue-400 text-xs uppercase tracking-widest block mb-1">Investimento Anual</span>
+                            <div class="flex items-baseline justify-center gap-1">
+                                <span class="text-white text-xl font-bold">R$</span>
+                                <span class="text-5xl font-display font-black text-white tracking-tighter">497,00</span>
+                            </div>
+                            <span class="text-[11px] text-zinc-400 mt-1 block">Acesso liberado por 1 ano inteiro</span>
+                        </div>
+
+                        <ul class="text-left text-sm text-zinc-300 space-y-3.5 mb-8">
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Tudo do Plano Mensal incluso</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> 12 Meses de Acesso Ininterrupto</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Atualizações e Setups Gratuitos</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i> Suporte VIP Prioritário</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://pay.hotmart.com/K108394716Q?off=rvnnu0ki" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold transition-all shadow-lg shadow-blue-500/20">
+                        ASSINAR PLANO ANUAL
+                    </a>
+                </div>
+
+                <!-- PLANO 3: VITALÍCIO (MAIS ESCOLHIDO) -->
+                <div class="plan-card bg-[#0f1117] p-8 rounded-[32px] text-center border-2 border-emerald-500 relative overflow-hidden shadow-2xl shadow-emerald-500/15 hover:scale-[1.02] transition-all duration-300 z-10 flex flex-col justify-between">
+                    <div class="absolute top-4 right-4 px-3.5 py-1 rounded-full bg-emerald-500 text-black text-[10px] font-black tracking-widest uppercase shadow-lg">Definitivo</div>
                     <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-amber-400 via-blue-500 to-emerald-500"></div>
                     
                     <div>
-                        <span class="text-emerald-400 text-xs font-bold tracking-[0.25em] uppercase">Melhor Custo-Benefício</span>
+                        <span class="text-emerald-400 text-xs font-bold tracking-[0.25em] uppercase">Sem Mensalidades</span>
                         <h3 class="text-2xl font-display font-black text-white mt-3 mb-2 uppercase tracking-tighter">Acesso Vitalício</h3>
-                        <p class="text-zinc-300 text-sm leading-relaxed mb-4">Pague uma única vez e tenha o Hadassa IA Pró v3.7 para sempre. Sem mensalidades, 100% seu.</p>
+                        <p class="text-zinc-300 text-sm leading-relaxed mb-4">Pague uma única vez e tenha o Hadassa IA Pró v3.7 para sempre, 100% seu.</p>
                         
                         <div class="my-6 py-6 px-4 rounded-2xl bg-emerald-500/[0.06] border border-emerald-500/20">
-                            <span class="text-emerald-400 text-xs font-bold uppercase bg-emerald-500/15 px-3 py-1 rounded-full inline-block mb-2">Equivale a menos de 7 meses</span>
-                            <span class="text-zinc-500 text-xs line-through tracking-widest uppercase block">De R$ 847,00 por apenas</span>
-                            
+                            <span class="text-emerald-400 text-xs font-bold uppercase bg-emerald-500/15 px-3 py-1 rounded-full inline-block mb-2">Pagamento Único</span>
                             <div class="flex items-baseline justify-center gap-1 mt-1">
-                                <span class="text-zinc-300 text-lg font-bold">12x de</span>
-                                <span class="text-white text-2xl font-bold">R$</span>
-                                <span class="text-5xl sm:text-6xl font-display font-black text-white tracking-tighter">39,62</span>
+                                <span class="text-white text-xl font-bold">R$</span>
+                                <span class="text-5xl sm:text-6xl font-display font-black text-white tracking-tighter">997,00</span>
                             </div>
-                            <span class="text-emerald-400 text-xs font-bold mt-1 block">ou R$ 397,00 à vista (Pagamento Único)</span>
+                            <span class="text-emerald-400 text-xs font-bold mt-1 block">Acesso definitivo sem renovações</span>
                         </div>
                         
                         <ul class="text-left text-sm text-white space-y-3.5 mb-8">
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> <strong>Tudo do Plano Mensal incluso</strong></li>
                             <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> <strong>Licença Vitalícia v3.7</strong> (Sem renovações)</li>
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> <strong>BÔNUS: Setups Mesa Prop + Robô de Histórico</strong></li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> <strong>BÔNUS: Setups Mesa Prop + Mapeador</strong></li>
                             <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> Todas as Atualizações Futuras Gratuitas</li>
-                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> Suporte VIP Prioritário</li>
+                            <li class="flex gap-3 items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-500 shrink-0"></i> Suporte VIP Exclusivo</li>
                         </ul>
                     </div>
                     
-                    <a href="https://pay.hotmart.com/Y106567645M?checkoutMode=10" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-full bg-gradient-main text-white font-black text-base hover:scale-105 transition-all shadow-[0_0_25px_rgba(0,200,83,0.35)]">
+                    <a href="https://pay.hotmart.com/K108394716Q?off=gskl2v20" target="_blank" rel="noopener noreferrer" class="block w-full py-4 rounded-full bg-gradient-main text-white font-black text-base hover:scale-105 transition-all shadow-[0_0_25px_rgba(0,200,83,0.35)]">
                         COMPRAR ACESSO VITALÍCIO
                     </a>
                 </div>
@@ -592,7 +639,7 @@
     </section>
 
     <!-- SEÇÃO: FAQ -->
-    <section id="faq" class="py-24">
+    <section id="faq" class="py-24 scroll-mt-28">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-16">
                 <div class="fade-up">
@@ -750,16 +797,19 @@
         }
         startTimer();
 
-        // Efeito de vidro na Navbar durante o scroll
+        // Compactar suavemente a Navbar no scroll sem sobrepor a Top Bar
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
-            if (!nav) return;
+            const header = document.getElementById('main-header');
+            if (!nav || !header) return;
             if (window.scrollY > 40) {
-                nav.classList.add('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'py-3', 'top-0');
-                nav.classList.remove('bg-transparent', 'py-4', 'top-8');
+                header.classList.add('shadow-2xl', 'shadow-black/80', 'bg-black/95');
+                nav.classList.add('py-2.5');
+                nav.classList.remove('py-3.5');
             } else {
-                nav.classList.remove('bg-black/90', 'backdrop-blur-lg', 'border-b', 'border-white/10', 'py-3', 'top-0');
-                nav.classList.add('bg-transparent', 'py-4', 'top-8');
+                header.classList.remove('shadow-2xl', 'shadow-black/80', 'bg-black/95');
+                nav.classList.remove('py-2.5');
+                nav.classList.add('py-3.5');
             }
         });
 
@@ -798,7 +848,7 @@
             });
         });
 
-        // Lógica do FAQ (compatível com SVG gerado pelo Lucide)
+        // Lógica do FAQ
         function toggleFAQ(button) {
             const container = button.closest('.faq-item');
             if (!container) return;
@@ -807,7 +857,6 @@
             const icon = button.querySelector('.faq-icon');
             const isOpen = container.classList.contains('active');
 
-            // Fecha todos os outros itens abertos
             document.querySelectorAll('#faq .faq-item').forEach(item => {
                 if (item !== container) {
                     item.classList.remove('active');
@@ -823,7 +872,6 @@
                 }
             });
 
-            // Alterna o item clicado
             if (!isOpen) {
                 container.classList.add('active');
                 if (answer) {
